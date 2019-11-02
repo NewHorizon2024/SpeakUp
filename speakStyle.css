@@ -30,6 +30,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
     
     
 }
@@ -52,11 +53,11 @@ header {
 }
 #word {
     font-family: Audiowide;
-    font-size: 30px;
+    font-size: 22px;
     width: 100%;
     height: inherit;
     text-align: center;
-    line-height: 3;
+    line-height: 4.8;
     transition: 0.2s ease-in;
    
     outline: 0;
@@ -113,10 +114,21 @@ header {
     border-top: 10px solid #000000;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    margin-top: 42px;
+    margin-top: 50px;
     transition: 0.2s ease-in;
     
 }
 .arrowRot {
     transform: rotate(180deg);
+}
+.menu-btn {
+    font-family: Audiowide;
+    font-size: 22px;
+    width: 100px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+.menu-btn:hover {
+    color: #ffffff;
+
 }
