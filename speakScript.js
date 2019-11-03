@@ -26,3 +26,11 @@ let gr = document.getElementsByClassName("plus");
 for (let i = 0; i < gr.length; i++) {
     gr[i].addEventListener("click", smart, false);
 }
+
+function mobileMenuList() {
+    let menu = document.getElementsByClassName("mobileMenu")[0];
+    menu.classList.toggle("clicker");
+}
+
+const userclick = document.getElementById("clickable");
+userclick.onclick = mobileMenuList;
