@@ -16,3 +16,13 @@ function openLessons() {
 
 const lessonsBtn = document.getElementById("part-top");
 lessonsBtn.addEventListener("click", openLessons, false);
+
+function smart(e) {
+    e.currentTarget.parentElement.nextElementSibling.classList.toggle("open");
+    e.currentTarget.classList.toggle("round"); 
+}
+
+let gr = document.getElementsByClassName("plus");
+for (let i = 0; i < gr.length; i++) {
+    gr[i].addEventListener("click", smart, false);
+}
