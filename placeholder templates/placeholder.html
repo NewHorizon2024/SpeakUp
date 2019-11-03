@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Templates placeholder </title>
+</head>
+<body>
+
+
+    <template id = "placeTemplate">
+        <div id = "container">
+            <div class = "header header-1"></div>
+            <div class = "header header-2"></div>
+            <div id = "container-rows">
+                <div class = "row"></div>
+                <div class = "row"></div>
+                <div class = "row"></div>
+            </div>
+        </div>
+        <style>
+            #container {
+                width: 300px;
+                height: 200px;
+                background-color: #EBEBEB;
+            }
+            .header {
+                border-radius: 20px;
+                background-color: #CDCDCD;
+                animation: ani 1s infinite;
+            }
+            .header-1 {
+                width: 200px;
+            }
+            .header-2 {
+                width: 170px;
+            }
+            #container-rows {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .row {
+                width: 80px;
+                height: 80px;
+                background-color: #CDCDCD;
+                border-radius: 20px;
+                animation: ani 1s infinite;
+            }
+            @keyframes ani {
+                0% {
+                    opacity: 0.1;
+                }
+                50% {
+                    opacity: 0.4;
+                }
+                100% {
+                    opacity: 0.1;
+                }
+            }
+            
+        </style>
+    </template>
+
+
+
+
+
+
+
+
+</body>
+</html>
