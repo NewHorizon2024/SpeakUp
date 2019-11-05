@@ -9,6 +9,9 @@
     <link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Adamina' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Asset' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script defer type = "text/javascript" src = "js/speakScript.js"></script>
 
@@ -16,11 +19,12 @@
 <body>
         
     <header>
-        <div id = "logo">
-            <img id = "logo-image" src = "logoAndImages/logo.png"/>
-        </div>
+        <!--Logo-->
+            <div id = "logo">
+                    <img id = "logo-image" src = "logoAndImages/logo.png"/>
+                </div>
         <div id = "menu">
-            <div class = "lessons-container">
+            <!--<div class = "lessons-container">
                 <div id = "part-top">
                     <div id = "word">Lessons</div>
                     <div class = "arrow"></div>
@@ -32,16 +36,20 @@
                         <a class = "list-lessons" href = "#">Day 2 Day</a>
                     </div>
                 </div>
-            </div>
+            </div>-->
+            <div class = "menu-btn">Lectures</div>
             <div class = "menu-btn">Library</div>
             <div class = "menu-btn">Resources</div>
             <div class = "menu-btn">Videos</div>
             <!--Mobile devices-->
-            <div id = "clickable">
+           <!-- <div id = "clickable">
                 <div class = "click click-1"></div>
                 <div class = "click click-2"></div>
                 <div class = "click click-3"></div>
-            </div>
+            </div>-->
+            
+            <i class="material-icons" id = "clickable" style = "font-size: 60px; color : #ffffff">fingerprint</i>
+            
             
             
         </div>
@@ -52,7 +60,31 @@
     <!--section[2]-->
     <section class = "rows row-1">
         <!--Part1-->
-        <div class= "mobileMenu"></div>
+        <!--Mobile menu-->
+        <div class= "mobileMenu">
+            <div id = "gridTable">
+                <div class = "icon icon-1">
+                    <img class = "icons-setup" src = "images/lectures.jpg">
+                </div>
+                <div class = "icon icon-2">
+                        <img class = "icons-setup" src = "images/library.jpg">
+                </div>
+                <div class = "icon icon-3">
+                        <img class = "icons-setup" src = "images/resources.jpg">
+                </div>
+                <div class = "icon icon-4">
+                        <img class = "icons-setup" src = "images/video-icon.jpg">
+                       
+                </div>
+                <div class = "txt txt-1">Lectures</div>
+                <div class = "txt txt-2">Library</div>
+                <div class = "txt txt-3">Resources</div>
+                <div class = "txt txt-4">Videos</div>
+            </div>
+            
+            
+ 
+        </div>
         <div id = "intro-content">
             <div id = "caption">
                 Learn on your schedule
