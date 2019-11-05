@@ -321,6 +321,53 @@ header {
 .txt-4 {
     grid-area: txt4;
 }
+#user-offers {
+    width: 100vw;
+    height: 100px;
+    background-color: #00594F;
+}
+#user-offers {
+    display: flex;
+    justify-content: space-around;
+}
+.grid-offer {
+    height: inherit;
+    justify-content: center;
+    align-content: center;
+    display: -moz-inline-grid;
+    display: -ms-inline-grid;
+    display: inline-grid;
+    grid-template-columns: 60px auto;
+    grid-template-rows: repeat(4, 20px);
+    grid-template-areas: 
+    "symbolis ."
+    "symbolis headeroffer"
+    "symbolis captionoffer"
+    "symbolis . ";
+    grid-column-gap: 10px;
+    
+}
+.symbol {
+    grid-area: symbolis;
+    align-self: center;
+}
+.header-offer {
+    grid-area: headeroffer;
+    font-family: Alegreya Sans;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: bold;
+    align-self: center;
+}
+.caption-offer {
+    grid-area: captionoffer;
+    font-family: Alegreya Sans;
+    color: #ffffff;
+    font-size: 20px;
+    align-self: center;
+}
+
+
 
 
 @media screen and  (max-width: 420px) {
