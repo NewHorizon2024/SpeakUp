@@ -8,11 +8,40 @@
 <template id = "tem">
     <div class = "card">
         <div class = "image-front">
-            <img src = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/master/contents/level1.png">
+            <img style = "width: 250px; height: 150px;" src = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/master/contents/level1.png">
         </div>
         <div class = "header-front"></div>
         <div class = "author"></div>
     </div>
+    <style>
+    .card {
+    width: 250px;
+    height: 250px;
+    background-color: #00594F;
+    color: #ffffff;
+  }
+.header-front {
+    width: inherit;
+    height: 50px;
+    text-align: center;
+    line-height: 2;
+  }
+.author{
+    width: inherit;
+    height: 50px;
+    text-align: center;
+    line-height: 2;
+  }
+.image-front {
+    width: inherit;
+    height: 150px;
+    cursor: pointer;
+}
+.im-content {
+    width: 250px;
+    height: 150px;
+}
+</style>
 </template>
 
 
