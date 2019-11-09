@@ -161,8 +161,114 @@
     </section>
     <section class = "row row-2">
         <div class = "shadow"></div>
-        
+        <div id = "user-offers">
+            <div class = "grid-offer">
+                <div class = "symbol symbol-1">
+                    <i class="material-icons" style = "color: #ffffff; font-size: 60px;">shop</i>
+                </div>
+                <div class = "header-offer">More than 100 online course</div>
+                <div class = "caption-offer">Explore a variety of fresh topics</div>
+            </div>
+            <div class = "grid-offer">
+                    <div class = "symbol symbol-1">
+                        <i class="material-icons" style = "color: #ffffff; font-size: 60px;">done_all</i>
+                    </div>
+                    <div class = "header-offer">Expert instruction</div>
+                    <div class = "caption-offer">Find the right instructor for you</div>
+            </div>
+            <div class = "grid-offer">
+                    <div class = "symbol symbol-1">
+                        <i class="material-icons" style = "color: #ffffff; font-size: 60px;">access_time</i>
+                    </div>
+                    <div class = "header-offer">Lifetime access</div>
+                    <div class = "caption-offer">Learn on your schedule</div>
+            </div>
+
+        </div>  
     </section>
+    <!--Row 3-->
+    <section class = "row row-3">
+        <div class = "left-side"></div>
+        <div class = "right-side">
+            <div class = "nav-bar-english-header">
+                <span class = "eng-header">Miscellaneous</span>
+                <span class = "eng-header">Business English</span>
+                <span class = "eng-header">General English</span>
+                <span class = "eng-header">Kids English</span>
+                <span class = "eng-header">Exam-Oriented</span>
+            </div>
+            <div class = "gallery">
+                <div class = "screen">
+                    <div class = "texter">1</div>
+                    <div class = "texter">2</div>
+                    <div class = "texter">3</div>
+                    <div class = "texter">4</div>
+                    <div class = "texter">5</div>
+                </div>
+                <div class = "item-arrow-left">
+                    <div class = "arrow-box"></div>
+                </div>
+                <div class = "item-arrow-right">
+                    <div class = "arrow-box box-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Templates-->
+    <template id = "templ">
+        <div id = "template-content">
+            <div id = "img"></div>
+            <div id = "header-content"></div>
+            <div id = "bottom-content"></div>
+        </div>
+        <style>
+            #template-content {
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                width: 280px;
+                height: 240px;
+                margin: 10px;
+                transition: 1s ease-in;
+            }
+            #img {
+                width: 250px;
+                border-radius: 20px;
+                height: 140px;
+                background-color: #F2F2F2;
+                animation: tem 2s infinite;
+            }
+            #header-content {
+                border-radius: 20px;
+                width: 250px;
+                height: 40px;
+                background-color: #F2F2F2;
+                animation: tem 2s infinite;
+            }
+            #bottom-content {
+                border-radius: 20px;
+                width: 140px;
+                height: 40px;
+                background-color: #F2F2F2;
+                animation: tem 2s infinite;
+            }
+            @keyframes tem {
+                0% {
+                    background-color: #CACACA;
+                }
+                
+                50% {
+                    background-color: #F2F2F2;
+                }
+               
+                100% {
+                    background-color: #CACACA;
+                }
+
+            }
+        </style>
+        
+    </template>
 
 
 
