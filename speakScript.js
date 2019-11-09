@@ -50,17 +50,32 @@ window.onload = function() {
 */
 
 let n = 0;
-function represent() {
+function representLeft() {
     n++;
-    try {
     let mango = document.getElementsByClassName("screen")[0];
     let point = mango.children[0];
+    if (n > 4) {
+        n = 0;
+    }
+    try {
     point.style.marginLeft = `-${(n * 200)}px`;
     } catch(err) {
         alert(err.message);
     }
-
 }
 
+function representRight() {
+    n--;
+    let mango = document.getElementsByClassName("screen")[0];
+    let point = mango.children[0];
+    if ( n < 0) {
+        n = 0;
+    }
+    point.style.marginLeft = `-${n * 200}px`;
+}
+
+const userRight = document.getElementsByClassName("item-arrow-right")[0];
+userRight.addEventListener("click", representRight, false);
+
 const userLeft = document.getElementsByClassName("item-arrow-left")[0];
-userLeft.onclick = represent;
+userLeft.onclick = representLeft;
