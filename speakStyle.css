@@ -366,8 +366,107 @@ header {
     font-size: 20px;
     align-self: center;
 }
-
-
+.row-3 {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+.left-side {
+    width: 40vw;
+    height: auto;
+}
+.right-side {
+    width: 40vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.nav-bar-english-header {
+    display: flex;
+    justify-content: space-around;
+    width: inherit;
+    height: 50px;
+    border-bottom: 2px solid lightgray;
+    align-items: center;
+    align-content: center;
+    
+}
+.eng-header {
+    font-family: Alegreya Sans;
+    cursor: pointer;
+    width: auto;
+    height: 46px;
+    align-self: center;
+    line-height: 3;
+    border-bottom: 4px solid #ffffff;
+    color: #212121;
+    font-weight: 600;
+}
+.eng-header:hover {
+    border-bottom: 4px solid #00594F;
+}
+.gallery {
+    display: -moz-inline-grid;
+    display: -ms-inline-grid;
+    display: inline-grid;
+    grid-template-rows: repeat(5, 50px[all-rows]);
+    grid-template-columns: repeat(12, 50px[all-columns]);
+    grid-template-areas: 
+    ". scr scr scr scr scr scr scr scr scr scr ."
+    ". scr scr scr scr scr scr scr scr scr scr ."
+    "arrowleft scr scr scr scr scr scr scr scr scr scr arrowright"
+    ". scr scr scr scr scr scr scr scr scr scr ."
+    ". scr scr scr scr scr scr scr scr scr scr .";
+}
+.screen {
+    width: 500px;
+    height: 250px;
+    grid-area: scr;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+.item-arrow-left {
+    grid-area: arrowleft;
+    background-color: #00594F;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+.item-arrow-right {
+    grid-area: arrowright;
+    background-color: #00594F;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+.arrow-box {
+    width: 15px;
+    height: 15px;
+    background-color: #00594F;;
+    border-top: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    transform: rotate(-45deg);
+    z-index: 2;
+}
+.box-2 {
+    transform: rotate(130deg);
+}
+.texter {
+    width: 200px;
+    height: 150px;
+    background-color: royalblue;
+    border: 2px solid black;
+    min-width: 200px;
+    max-width: 200px;
+}
 
 
 @media screen and  (max-width: 420px) {
