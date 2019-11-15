@@ -116,9 +116,29 @@ function remover() {
 
 
 window.onload = function() {
-    
     render();
 }
 
 
+function openMobileContentCourse() {
+    let content = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/repo/mobileCourse.html";
+    let reviewContent = document.getElementsByClassName("level-1")[0];
+    reviewContent.classList.toggle("blocker");
+    fetch(content)
+    .then(response => {
+        return response.text();
+    })
+    .then(grid => {
+        let parser = new DOMParser();
+        let contentDel = parser.parseFromString(grid, "text/html");
+        let listView = contentDel.getElementById("courseMobile").content.cloneNode(true);
+        for (let i = 0; i < listView.children.length; i++) {
+            reviewContent.append(listView.children[i]);
+        }
+    })
+    .catch(err => alert(err.message));
+}
+
+const openLevel1 = document.getElementsByClassName("open-arrow-1")[0];
+openLevel1.addEventListener("click", openMobileContentCourse, false);
 
