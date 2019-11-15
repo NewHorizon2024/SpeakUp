@@ -47,14 +47,14 @@ userclick.onclick = mobileMenuList;
     }
     return;
 }
-//window.onload = holder;
+
 
 let n = 0;
 function representLeft() {
     n++;
     let mango = document.getElementsByClassName("screen")[0];
     let point = mango.children[0];
-    if (n > mango.children.length - 1) {
+    if (n > mango.children.length - 2) {
         n = 0;
     }
     try {
@@ -80,7 +80,7 @@ userRight.addEventListener("click", representRight, false);
 const userLeft = document.getElementsByClassName("item-arrow-left")[0];
 userLeft.addEventListener("click", representLeft, false);
 
-
+/*
 function remover() {
     let opera = document.getElementsByClassName("screen")[0].children;
     for (let i = 0; i < opera.length; i++) {
@@ -89,9 +89,9 @@ function remover() {
 
 }
 
-
+*/
    function render() {
-    holder();
+    //holder();
     let url = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/master/contents/level1.html";
     fetch(url)
     .then(response => {
@@ -115,7 +115,10 @@ function remover() {
 }
 
 
-window.onload = render;
+window.onload = function() {
+    
+    render();
+}
 
 
 
