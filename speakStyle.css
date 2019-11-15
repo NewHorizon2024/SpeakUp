@@ -489,8 +489,7 @@ header {
 
 #mobileCourse {
     width: 100vw;
-    height: 300px;
-    background-color: red;
+    height: auto;
     display: none;
 }
 .openCourse {
@@ -514,7 +513,7 @@ header {
     position: relative;
     width: 20%;
     height: inherit;
-    background-color: green;
+    cursor: pointer;
 }
 .box-arrow {
     position: absolute;
@@ -527,7 +526,28 @@ header {
     bottom: 0;
     top: 0;
     margin: auto;
-    transform: rotate(220deg);
+    transform: rotate(222deg);
+}
+.level-content {
+    width: 100vw;
+    height: auto;
+    display: none;
+}
+.level-1 {
+    background-image:url("https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+    background-size: cover;
+    height: 300px;
+    width: 100vw;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    display: none;
+    
+}
+.blocker {
+    display: block;
 }
 @media screen and  (max-width: 420px) {
     #caption {
