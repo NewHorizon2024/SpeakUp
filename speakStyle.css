@@ -374,6 +374,8 @@ header {
 .left-side {
     width: 40vw;
     height: auto;
+    display: flex;
+    flex-direction: column;
 }
 .right-side {
     width: 40vw;
@@ -425,7 +427,7 @@ header {
     z-index: 1;
     display: flex;
     flex-direction: row;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .item-arrow-left {
     grid-area: arrowleft;
@@ -468,6 +470,20 @@ header {
     max-width: 200px;
 }
 
+#story-header {
+    font-family: Alegreya Sans;
+    font-size: 25px;
+    height: auto;
+    z-index: 2;
+    background-color: #212121;
+    opacity: 0.5;
+    color: #ffffff;
+
+}
+
+#video {
+    z-index: 1;
+}
 
 @media screen and  (max-width: 420px) {
     #caption {
