@@ -1,3 +1,8 @@
 <h1> SpeakUp </h1>
-<h4 style = "color: royalblue;"> Educational WebSite </h4>
+<h4> Educational WebSite </h4>
+<style>
+  h4 {
+  color: royalblue;
+  }
+  </style>
 
