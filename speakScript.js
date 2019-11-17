@@ -1,5 +1,10 @@
 "user strict";
 
+const mainView = document.getElementsByClassName("screen")[0];
+const legendView = document.getElementsByClassName("gallery")[0];
+const [screenOne, screenTwo] = [document.getElementsByClassName("screen")[0], document.getElementsByClassName("screen2")[0]];
+let globalArray = [screenOne, screenTwo];
+
 function smart(e) {
     e.currentTarget.parentElement.nextElementSibling.classList.toggle("open");
     e.currentTarget.classList.toggle("round"); 
@@ -32,9 +37,10 @@ userclick.onclick = mobileMenuList;
 
 
 let n = 0;
+
 function representLeft() {
     n++;
-    let mango = document.getElementsByClassName("screen")[0];
+    let mango = document.getElementsByClassName("cino")[0];
     let point = mango.children[0];
     if (n > mango.children.length - 2) {
         n = 0;
@@ -48,7 +54,7 @@ function representLeft() {
 
 function representRight() {
     n--;
-    let mango = document.getElementsByClassName("screen")[0];
+    let mango = document.getElementsByClassName("cino")[0];
     let point = mango.children[0];
     if ( n < 0) {
         n = 0;
@@ -63,34 +69,87 @@ const userLeft = document.getElementsByClassName("item-arrow-left")[0];
 userLeft.addEventListener("click", representLeft, false);
 
 
-   function render() {
+function render() {
     let url = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/master/contents/level1.html";
-    let headera = new Headers();
-    headera.append("Content-Type", "text/plain");
-    let inita = {
+    fetch(url)
+    .then(response => {
+       return response.text();
+    })
+    .then(data => {
+        let parser = new DOMParser();
+        let content = parser.parseFromString(data, "text/html");
+        let dataView = content.getElementsByClassName("tem");
+        let arr = [];
+        for (let i = 0; i < dataView.length; i++) {
+            arr.push(dataView[i].content.cloneNode(true));
+        }
+        let cin = document.createElement("div");
+        cin.classList.add("cino");
+        for (let h = 0; h < mainView.children.length; h++) {
+            mainView.children[h].remove();
+        }
+        n = 0;
+        mainView.append(cin);
+        arr.map(a => cin.append(a));
+        let num = mainView.children.length;
+        
+        if (num > 1) {
+            mainView.removeChild(mainView.lastChild);
+        }
+        
+    })
+}
+
+
+const englishHeader0 = document.getElementsByClassName("eng-header")[0];
+englishHeader0.addEventListener("click", render, false);
+
+let targo = document.getElementsByClassName("screen2")[0];
+function render2() {
+    let url = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/master/contents/level2.html";
+    let header2 = new Headers();
+    header2.append("Content-Type", "text/plain");
+    let init2 = {
         method: "GET",
         mode: "cors",
-        headers: headera,
+        headers: header2,
         cache: "default"
     }
-    let reqa = new Request(url, inita);
-    fetch(reqa)
+    let req2 = new Request(url, init2);
+    fetch(req2)
     .then(response => {
         return response.text();
     })
-    .then(card => {
-       let parser = new DOMParser();
-       let contentUser =  parser.parseFromString(card, "text/html");
-       let cards = contentUser.getElementsByClassName("tem");
-       let arr = [];
-       for (let x = 0; x < cards.length; x++) {
-           arr.push(cards[x].content.cloneNode(true));
-       }
-       for (let y = 0; y < arr.length; y++) {
-           document.getElementsByClassName("screen")[0].append(arr[y]);
-       }
+    .then(grid => {
+        let arr2 = [];
+        let cin2 = document.createElement("div");
+        cin2.classList.add("cino");
+        for (let h = 0; h < mainView.children.length; h++) {
+            mainView.children[h].remove();
+        }
+        mainView.append(cin2);
+        let parser2 = new DOMParser();
+        let contentHtml = parser2.parseFromString(grid, "text/html");
+        let contentGrid = contentHtml.getElementsByClassName("tem2");
+        for (let i = 0; i < contentGrid.length; i++) {
+            arr2.push(contentGrid[i].content.cloneNode(true));
+        }
+        arr2.map(a => cin2.append(a));
+        n = 0;
+        let num = mainView.children.length;
+        
+        if (num > 1) {
+            mainView.removeChild(mainView.lastChild);
+        }
     })
+    .catch(err => alert(err.message));
 }
+
+
+
+
+const englishHeader1 = document.getElementsByClassName("eng-header")[1];
+englishHeader1.addEventListener("click", render2, false);
 
 
 let reviewContent = document.getElementsByClassName("level-1")[0];
