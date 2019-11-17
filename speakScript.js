@@ -1,23 +1,5 @@
 "user strict";
 
-/*
-function openLessons() {
-    try {
-    let list = document.getElementsByClassName("lessons-content")[0];
-    let listCon = document.getElementsByClassName("part-bottom")[0];
-    let arrow = document.getElementsByClassName("arrow")[0];
-    arrow.classList.toggle("arrowRot");
-    list.classList.toggle("openLessons");
-    listCon.classList.toggle("resOver");
-    } catch(err) {
-        alert(err.message);
-    }
-}
-
-
-const lessonsBtn = document.getElementById("part-top");
-lessonsBtn.addEventListener("click", openLessons, false);
-*/
 function smart(e) {
     e.currentTarget.parentElement.nextElementSibling.classList.toggle("open");
     e.currentTarget.classList.toggle("round"); 
@@ -80,20 +62,19 @@ userRight.addEventListener("click", representRight, false);
 const userLeft = document.getElementsByClassName("item-arrow-left")[0];
 userLeft.addEventListener("click", representLeft, false);
 
-/*
-function remover() {
-    let opera = document.getElementsByClassName("screen")[0].children;
-    for (let i = 0; i < opera.length; i++) {
-        opera[i].style.display = "none";
-    }
 
-}
-
-*/
    function render() {
-    //holder();
     let url = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/master/contents/level1.html";
-    fetch(url)
+    let headera = new Headers();
+    headera.append("Content-Type", "text/plain");
+    let inita = {
+        method: "GET",
+        mode: "cors",
+        headers: headera,
+        cache: "default"
+    }
+    let reqa = new Request(url, inita);
+    fetch(reqa)
     .then(response => {
         return response.text();
     })
@@ -108,37 +89,56 @@ function remover() {
        for (let y = 0; y < arr.length; y++) {
            document.getElementsByClassName("screen")[0].append(arr[y]);
        }
-       
     })
-    
-    
 }
 
 
-window.onload = function() {
-    render();
-}
-
-
+let reviewContent = document.getElementsByClassName("level-1")[0];
 function openMobileContentCourse() {
-    let content = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/repo/mobileCourse.html";
-    let reviewContent = document.getElementsByClassName("level-1")[0];
-    reviewContent.classList.toggle("blocker");
-    fetch(content)
+    let content = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/master/contents/fixedCourseContent.html";
+    let header = new Headers();
+     header.append("Content-Type", "text/plain");
+    const init = {
+        method: "GET",
+        mode: "cors",
+        headers: header,
+        cache: "default"
+    }
+    let req = new Request(content, init);
+    fetch(req)
     .then(response => {
         return response.text();
     })
     .then(grid => {
         let parser = new DOMParser();
         let contentDel = parser.parseFromString(grid, "text/html");
-        let listView = contentDel.getElementById("courseMobile").content.cloneNode(true);
-        for (let i = 0; i < listView.children.length; i++) {
-            reviewContent.append(listView.children[i]);
+        let allPack = contentDel.getElementsByClassName("courseContent");
+        let arr = [];
+        for (let i = 0; i < allPack.length; i++) {
+            arr.push(allPack[i]);
         }
+        arr.map(a => reviewContent.append(a));
     })
     .catch(err => alert(err.message));
 }
 
 const openLevel1 = document.getElementsByClassName("open-arrow-1")[0];
-openLevel1.addEventListener("click", openMobileContentCourse, false);
+openLevel1.addEventListener("click", function() {
+    reviewContent.classList.toggle("blocker");
+    reviewContent.classList.toggle("contentView");
+}, false);
+window.onload = function() {
+    render();
+    openMobileContentCourse();
+    //maxi();
+}
+
+
+function maxi() {
+    let loaders = document.getElementById("templ").content.cloneNode(true);
+    let targs = document.getElementsByClassName("screen")[0];
+    targs.append(loaders);
+}
+
+
 
