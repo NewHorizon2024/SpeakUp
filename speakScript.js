@@ -62,6 +62,27 @@ function representRight() {
     point.style.marginLeft = `-${n * 255}px`;
 }
 
+function indicator(e) {
+    if (!e) {
+        e = window.event;
+    }
+    let target = e.target;
+    if (target.className != "eng-header") {
+        return;
+    }
+    const rowButtons = document.getElementsByClassName("eng-header");
+    for (let i = 0; i < rowButtons.length; i++) {
+        rowButtons[i].classList.remove("mark");
+    }
+    target.classList.add("mark");
+}
+
+const rowLevel = document.getElementsByClassName("nav-bar-english-header")[0];
+rowLevel.addEventListener("click", indicator, false);
+
+
+
+
 const userRight = document.getElementsByClassName("item-arrow-right")[0];
 userRight.addEventListener("click", representRight, false);
 
@@ -179,7 +200,6 @@ function render3() {
         let arr2 = [];
         let cin2 = document.createElement("div");
         cin2.classList.add("cino");
-        
         mainView.append(cin2);
         let parser2 = new DOMParser();
         let contentHtml = parser2.parseFromString(grid, "text/html");
