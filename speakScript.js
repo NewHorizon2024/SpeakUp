@@ -221,6 +221,94 @@ function render3() {
 const englishHeader2 = document.getElementsByClassName("eng-header")[2];
 englishHeader2.addEventListener("click", render3, false);
 
+function render4() {
+    for (let h = 0; h < mainView.children.length; h++) {
+        mainView.children[h].remove();
+    }
+    let url = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/master/contents/level4.html";
+    let header2 = new Headers();
+    header2.append("Content-Type", "text/plain");
+    let init2 = {
+        method: "GET",
+        mode: "cors",
+        headers: header2,
+        cache: "default"
+    }
+    let req2 = new Request(url, init2);
+    fetch(req2)
+    .then(response => {
+        return response.text();
+    })
+    .then(grid => {
+        let arr2 = [];
+        let cin2 = document.createElement("div");
+        cin2.classList.add("cino");
+        mainView.append(cin2);
+        let parser2 = new DOMParser();
+        let contentHtml = parser2.parseFromString(grid, "text/html");
+        let contentGrid = contentHtml.getElementsByClassName("tem4");
+        for (let i = 0; i < contentGrid.length; i++) {
+            arr2.push(contentGrid[i].content.cloneNode(true));
+        }
+        arr2.map(a => cin2.append(a));
+        n = 0;
+        let num = mainView.children.length;
+        
+        if (num > 1) {
+            mainView.removeChild(mainView.lastChild);
+        }
+    })
+    .catch(err => alert(err.message));
+}
+
+const englishHeader3 = document.getElementsByClassName("eng-header")[3];
+englishHeader3.addEventListener("click", render4, false);
+
+function render5() {
+    for (let h = 0; h < mainView.children.length; h++) {
+        mainView.children[h].remove();
+    }
+    let url = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/master/contents/level5.html";
+    let header2 = new Headers();
+    header2.append("Content-Type", "text/plain");
+    let init2 = {
+        method: "GET",
+        mode: "cors",
+        headers: header2,
+        cache: "default"
+    }
+    let req2 = new Request(url, init2);
+    fetch(req2)
+    .then(response => {
+        return response.text();
+    })
+    .then(grid => {
+        let arr2 = [];
+        let cin2 = document.createElement("div");
+        cin2.classList.add("cino");
+        mainView.append(cin2);
+        let parser2 = new DOMParser();
+        let contentHtml = parser2.parseFromString(grid, "text/html");
+        let contentGrid = contentHtml.getElementsByClassName("tem5");
+        for (let i = 0; i < contentGrid.length; i++) {
+            arr2.push(contentGrid[i].content.cloneNode(true));
+        }
+        arr2.map(a => cin2.append(a));
+        n = 0;
+        let num = mainView.children.length;
+        
+        if (num > 1) {
+            mainView.removeChild(mainView.lastChild);
+        }
+    })
+    .catch(err => alert(err.message));
+}
+
+const englishHeader4 = document.getElementsByClassName("eng-header")[4];
+englishHeader4.addEventListener("click", render5, false);
+
+
+
 
 let reviewContent = document.getElementsByClassName("level-1")[0];
 function openMobileContentCourse() {
