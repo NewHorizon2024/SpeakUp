@@ -78,8 +78,15 @@
                     </div>
                 </div>
             </div>
+            <div class = "grade">Grade Me!</div>
         </div>
         <style>
+            .answer:hover {
+                background-color: #54C571;
+            }
+            .chosen {
+                background-color: #54C571;
+            }
             .introQuiz {
                 font-size: 35px;
                 font-family: Alegreya Sans;
@@ -104,8 +111,8 @@
                 content: "Question: 1";
                 width: 120px;
                 height: 30px;
-                background-color: lightgreen;
-                color: #212121;
+                background-color: #00594F;
+                color: #ffffff;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -120,8 +127,8 @@
                 content: "Question: 2";
                 width: 120px;
                 height: 30px;
-                background-color: lightgreen;
-                color: #212121;
+                background-color: #00594F;
+                color: #ffffff;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -136,8 +143,8 @@
                 content: "Question: 3";
                 width: 120px;
                 height: 30px;
-                background-color: lightgreen;
-                color: #212121;
+                background-color: #00594F;
+                color: #ffffff;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -207,6 +214,16 @@
                 85% {transform: scale(1.5);}
                 100% {transform:scale(1);}
             }
+            .grade {
+                width: 250px;
+                height: 40px;
+                color: #ffffff;
+                background-color: #00594F;
+                font-size: 20px;
+                border-radius: 10px;
+                cursor: pointer;
+                margin-top: 50px;
+            }
 
 
 .right {
@@ -273,19 +290,24 @@
                       n++;
                       home.children[0].style.cssText = `
                   animation: shake 0.5s infinite;
+                  background-color: #54C571;
                   `;
                   if (n > 6) {
                       clearInterval(start);
                       home.children[0].style.cssText = `
                       animation = "";
+                      background-color: #54C571;
                       margin-left: 5px;`;
+                      
                   }
                   }, 100);
                   return;
               }
                home.appendChild(this);
                this.style.marginLeft = "5px";
+               this.style.backgroundColor = "#54C571";
                home.style.borderBottom = "0px";
+               
            }
            let ansOneA = document.getElementsByClassName("answer-1")[0];
            let ansTwoA = document.getElementsByClassName("answer-2")[0];
@@ -303,11 +325,13 @@
                       n++;
                       home.children[0].style.cssText = `
                   animation: shake 0.5s infinite;
+                  background-color: #54C571;
                   `;
                   if (n > 6) {
                       clearInterval(start);
                       home.children[0].style.cssText = `
                       animation = "";
+                      background-color: #54C571;
                       margin-left: 5px;`;
                   }
                   }, 100);
@@ -315,6 +339,7 @@
               }
                home.appendChild(this);
                this.style.marginLeft = "5px";
+               this.style.backgroundColor = "#54C571";
                home.style.borderBottom = "0px";
            }
            let ansOneB = document.getElementsByClassName("answer-1")[1];
@@ -333,11 +358,13 @@
                       n++;
                       home.children[0].style.cssText = `
                   animation: shake 0.5s infinite;
+                  background-color: #54C571;
                   `;
                   if (n > 6) {
                       clearInterval(start);
                       home.children[0].style.cssText = `
                       animation = "";
+                      background-color: #54C571;
                       margin-left: 5px;`;
                   }
                   }, 100);
@@ -345,6 +372,7 @@
               }
                home.appendChild(this);
                this.style.marginLeft = "5px";
+               this.style.backgroundColor = "#54C571";
                home.style.borderBottom = "0px";
            }
            let ansOneC = document.getElementsByClassName("answer-1")[2];
