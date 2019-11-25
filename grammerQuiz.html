@@ -10,7 +10,7 @@
                 Grammer Quiz
             </div>
             <div class = "inst">
-                   <b>Instructions:</b>  5 questions to test your level.
+                   <b>Instructions:</b>  3 questions to test your level.
             </div>
             <div class = "question question-1">
                 <div class = "answer-row">
@@ -23,7 +23,32 @@
                     <div class = "itemn item-n-1"></div>
                     <div class = "itemn item-q-compelte">day.</div>
                 </div>
-               
+            </div>
+
+            <div class = "question question-2">
+                <div class = "answer-row">
+                    <div class = "answer answer-1">say</div>
+                    <div class = "answer answer-2">saying</div>
+                    <div class = "answer answer-3">to say</div>
+                </div>
+                <div class = "question-word">
+                    <div class = " itemn item-q-1"> He denied</div>
+                    <div class = "itemn item-n-1"></div>
+                    <div class = "itemn item-q-compelte">it.</div>
+                </div>
+            </div>
+
+            <div class = "question question-3">
+                <div class = "answer-row">
+                    <div class = "answer answer-1">where</div>
+                    <div class = "answer answer-2">when</div>
+                    <div class = "answer answer-3">which</div>
+                </div>
+                <div class = "question-word">
+                    <div class = " itemn item-q-1">This is the town</div>
+                    <div class = "itemn item-n-1"></div>
+                    <div class = "itemn item-q-compelte">I was born.</div>
+                </div>
             </div>
         </div>
         <style>
@@ -36,13 +61,16 @@
                 color: #ffffff;
             }
             #container-quiz {
-                height: 500px;
+                height: auto;
                 border: 2px solid lightgray;
                 width: 50vw;
                 display: flex;
                 flex-direction: column;
                 align-content: center;
                 align-items: center;
+                text-align: center;
+                line-height: 2;
+
             }
             .question-1::after {
                 content: "Question: 1";
@@ -53,7 +81,39 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                margin-top: -31px;
+                margin-top: -50px;
+                margin-left: 20px;
+                text-align: center;
+                line-height: 1.5;
+                font-size: 18px;
+                box-shadow: 10px 10px 10px 5px lightgray;
+            }
+            .question-2::after {
+                content: "Question: 2";
+                width: 120px;
+                height: 30px;
+                background-color: lightgreen;
+                color: #212121;
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-top: -50px;
+                margin-left: 20px;
+                text-align: center;
+                line-height: 1.5;
+                font-size: 18px;
+                box-shadow: 10px 10px 10px 5px lightgray;
+            }
+            .question-3::after {
+                content: "Question: 3";
+                width: 120px;
+                height: 30px;
+                background-color: lightgreen;
+                color: #212121;
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-top: -50px;
                 margin-left: 20px;
                 text-align: center;
                 line-height: 1.5;
@@ -85,13 +145,11 @@
                 line-height: 2;
                 outline: 0;
                 z-index: 2;
-                margin-right: 10px;
-                
+                margin-right: 10px; 
             }
             .answer-row {
                 display :flex;
-                justify-content: space-around;
-                
+                justify-content: space-around; 
             }
             
             .question-word {
@@ -106,7 +164,6 @@
                 width: 150px;
                 height: 50px;
                 border-bottom: 2px dashed lightgreen;
-                
             }
             .item-n-1 {
                 border-bottom: 2px dashed lightgreen;
@@ -114,24 +171,107 @@
                 width: 160px;
                 transition: 3s ease-in;
             }
+            @keyframes shake {
+                0% {transform: rotate(10deg);}
+                25% {transform: rotate(0deg);}
+                50% {transform: rotate(-10deg);}
+                75% {transform: rotate(0deg);}
+                85% {transform: scale(1.5);}
+                100% {transform:scale(1);}
+            }
         </style>
 
         <script>
-           function test() {
+           function questionOne() {
               const home = document.getElementsByClassName("item-n-1")[0];
               if (home.children.length > 0) {
+                  let n = 0;
+                  let start = setInterval( () => {
+                      n++;
+                      home.children[0].style.cssText = `
+                  animation: shake 0.5s infinite;
+                  `;
+                  if (n > 6) {
+                      clearInterval(start);
+                      home.children[0].style.cssText = `
+                      animation = "";
+                      margin-left: 5px;`;
+                  }
+                  }, 100);
                   return;
               }
                home.appendChild(this);
                this.style.marginLeft = "5px";
                home.style.borderBottom = "0px";
-
            }
-           let ans = document.getElementsByClassName("answer");
-           for (let i = 0; i < ans.length; i++) {
-               ans[i].addEventListener("click", test, false);
-
+           let ansOneA = document.getElementsByClassName("answer-1")[0];
+           let ansTwoA = document.getElementsByClassName("answer-2")[0];
+           let ansThreeA = document.getElementsByClassName("answer-3")[0];
+           let groupAanswers = [ansOneA, ansTwoA, ansThreeA];
+           for (let i = 0; i < groupAanswers.length; i++) {
+               groupAanswers[i].addEventListener("click", questionOne, false);
            }
+
+           function questionTwo() {
+              const home = document.getElementsByClassName("item-n-1")[1];
+              if (home.children.length > 0) {
+                  let n = 0;
+                  let start = setInterval( () => {
+                      n++;
+                      home.children[0].style.cssText = `
+                  animation: shake 0.5s infinite;
+                  `;
+                  if (n > 6) {
+                      clearInterval(start);
+                      home.children[0].style.cssText = `
+                      animation = "";
+                      margin-left: 5px;`;
+                  }
+                  }, 100);
+                  return;
+              }
+               home.appendChild(this);
+               this.style.marginLeft = "5px";
+               home.style.borderBottom = "0px";
+           }
+           let ansOneB = document.getElementsByClassName("answer-1")[1];
+           let ansTwoB = document.getElementsByClassName("answer-2")[1];
+           let ansThreeB = document.getElementsByClassName("answer-3")[1];
+           let groupBanswers = [ansOneB, ansTwoB, ansThreeB];
+           for (let i = 0; i < groupBanswers.length; i++) {
+               groupBanswers[i].addEventListener("click", questionTwo, false);
+           }
+
+           function questionThree() {
+              const home = document.getElementsByClassName("item-n-1")[2];
+              if (home.children.length > 0) {
+                  let n = 0;
+                  let start = setInterval( () => {
+                      n++;
+                      home.children[0].style.cssText = `
+                  animation: shake 0.5s infinite;
+                  `;
+                  if (n > 6) {
+                      clearInterval(start);
+                      home.children[0].style.cssText = `
+                      animation = "";
+                      margin-left: 5px;`;
+                  }
+                  }, 100);
+                  return;
+              }
+               home.appendChild(this);
+               this.style.marginLeft = "5px";
+               home.style.borderBottom = "0px";
+           }
+           let ansOneC = document.getElementsByClassName("answer-1")[2];
+           let ansTwoC = document.getElementsByClassName("answer-2")[2];
+           let ansThreeC = document.getElementsByClassName("answer-3")[2];
+           let groupCanswers = [ansOneC, ansTwoC, ansThreeC];
+           for (let i = 0; i < groupCanswers.length; i++) {
+               groupCanswers[i].addEventListener("click", questionThree, false);
+           }
+
 
         </script>
 
