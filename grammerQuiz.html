@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz</title>
+        <link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
+    </head>
+    <body>
+        <div id = "container-quiz">
+            <div class = "introQuiz">
+                Grammer Quiz
+            </div>
+            <div class = "inst">
+                   <b>Instructions:</b>  5 questions to test your level.
+            </div>
+            <div class = "question question-1">
+                <div class = "answer-row">
+                    <div class = "answer answer-1">another</div>
+                    <div class = "answer answer-2">other</div>
+                    <div class = "answer answer-3">the other</div>
+                </div>
+                <div class = "question-word">
+                    <div class = " itemn item-q-1"> I just saw her</div>
+                    <div class = "itemn item-n-1"></div>
+                    <div class = "itemn item-q-compelte">day.</div>
+                </div>
+               
+            </div>
+        </div>
+        <style>
+            .introQuiz {
+                font-size: 35px;
+                font-family: Alegreya Sans;
+                width: inherit;
+                height: 100px;
+                background-color: #00594F;
+                color: #ffffff;
+            }
+            #container-quiz {
+                height: 500px;
+                border: 2px solid lightgray;
+                width: 50vw;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                align-items: center;
+            }
+            .question-1::after {
+                content: "Question: 1";
+                width: 120px;
+                height: 30px;
+                background-color: lightgreen;
+                color: #212121;
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-top: -31px;
+                margin-left: 20px;
+                text-align: center;
+                line-height: 1.5;
+                font-size: 18px;
+                box-shadow: 10px 10px 10px 5px lightgray;
+            }
+            .question {
+                width: 45vw;
+                height: 150px;
+                border: 2px solid lightgray;
+                border-radius: 20px;
+                align-content: center;
+                margin-top: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                position: relative;
+            }
+            .answer {
+                width: 150px;
+                height: 50px;
+                background-color: lightgreen;
+                border-radius: 20px;
+                cursor: pointer;
+                color: #ffffff;
+                text-align: center;
+                font-size: 20px;
+                line-height: 2;
+                outline: 0;
+                z-index: 2;
+                margin-right: 10px;
+                
+            }
+            .answer-row {
+                display :flex;
+                justify-content: space-around;
+                
+            }
+            
+            .question-word {
+                display: flex;
+                margin-top: 25px;
+                font-size: 25px;
+                align-content: center;
+                align-items: center;
+            }
+            .answer-container {
+                display: inline-block;
+                width: 150px;
+                height: 50px;
+                border-bottom: 2px dashed lightgreen;
+                
+            }
+            .item-n-1 {
+                border-bottom: 2px dashed lightgreen;
+                height: 50px;
+                width: 160px;
+                transition: 3s ease-in;
+            }
+        </style>
+
+        <script>
+           function test() {
+              const home = document.getElementsByClassName("item-n-1")[0];
+              if (home.children.length > 0) {
+                  return;
+              }
+               home.appendChild(this);
+               this.style.marginLeft = "5px";
+               home.style.borderBottom = "0px";
+
+           }
+           let ans = document.getElementsByClassName("answer");
+           for (let i = 0; i < ans.length; i++) {
+               ans[i].addEventListener("click", test, false);
+
+           }
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
