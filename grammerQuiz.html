@@ -15,9 +15,9 @@
             </div>
             <div class = "question question-1">
                 <div class = "answer-row">
-                    <div class = "answer answer-1" onclick = "questionOne();">another</div>
-                    <div class = "answer answer-2" onclick = "questionOne();">other</div>
-                    <div class = "answer answer-3" onclick = "questionOne();">the other</div>
+                    <div class = "answer answer-1">another</div>
+                    <div class = "answer answer-2">other</div>
+                    <div class = "answer answer-3">the other</div>
                 </div>
                 <div class = "question-word">
                     <div class = " itemn item-q-1"> I just saw her</div>
@@ -37,9 +37,9 @@
 
             <div class = "question question-2">
                 <div class = "answer-row">
-                    <div class = "answer answer-1" onclick = "questionTwo();">say</div>
-                    <div class = "answer answer-2" onclick = "questionTwo();">saying</div>
-                    <div class = "answer answer-3" onclick = "questionTwo();">to say</div>
+                    <div class = "answer answer-1">say</div>
+                    <div class = "answer answer-2">saying</div>
+                    <div class = "answer answer-3">to say</div>
                 </div>
                 <div class = "question-word">
                     <div class = " itemn item-q-1"> He denied</div>
@@ -60,9 +60,9 @@
 
             <div class = "question question-3">
                 <div class = "answer-row">
-                    <div class = "answer answer-1" onclick = "questionThree();">where</div>
-                    <div class = "answer answer-2" onclick = "questionThree();">when</div>
-                    <div class = "answer answer-3" onclick = "questionThree();">which</div>
+                    <div class = "answer answer-1">where</div>
+                    <div class = "answer answer-2">when</div>
+                    <div class = "answer answer-3">which</div>
                 </div>
                 <div class = "question-word">
                     <div class = " itemn item-q-1">This is the town</div>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            <div class = "grade" onclick = "quizResult();">Grade Me!</div>
+            <div class = "grade">Grade Me!</div>
         </div>
         <style>
             .answer:hover {
@@ -313,11 +313,10 @@
            let ansTwoA = document.getElementsByClassName("answer-2")[0];
            let ansThreeA = document.getElementsByClassName("answer-3")[0];
            let groupAanswers = [ansOneA, ansTwoA, ansThreeA];
-            /*
            for (let i = 0; i < groupAanswers.length; i++) {
                groupAanswers[i].addEventListener("click", questionOne, false);
            }
-           */
+           
 
            function questionTwo() {
               const home = document.getElementsByClassName("item-n-1")[1];
@@ -348,11 +347,10 @@
            let ansTwoB = document.getElementsByClassName("answer-2")[1];
            let ansThreeB = document.getElementsByClassName("answer-3")[1];
            let groupBanswers = [ansOneB, ansTwoB, ansThreeB];
-            /*
            for (let i = 0; i < groupBanswers.length; i++) {
                groupBanswers[i].addEventListener("click", questionTwo, false);
            }
-           */
+           
 
            function questionThree() {
               const home = document.getElementsByClassName("item-n-1")[2];
@@ -383,11 +381,10 @@
            let ansTwoC = document.getElementsByClassName("answer-2")[2];
            let ansThreeC = document.getElementsByClassName("answer-3")[2];
            let groupCanswers = [ansOneC, ansTwoC, ansThreeC];
-            /*
            for (let i = 0; i < groupCanswers.length; i++) {
                groupCanswers[i].addEventListener("click", questionThree, false);
            }
-           */
+           
 
            function quizResult() {
                let score = 0;
@@ -421,7 +418,7 @@
            }
 
            const userResult = document.getElementsByClassName("grade")[0];
-          // userResult.addEventListener("click", quizResult, false);
+           userResult.addEventListener("click", quizResult, false);
         </script>
     </template>
 
