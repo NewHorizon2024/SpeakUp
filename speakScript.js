@@ -347,15 +347,213 @@ openLevel1.addEventListener("click", function() {
 window.onload = function() {
     render();
     openMobileContentCourse();
-    //maxi();
+    quizContentHolder();
+  // quizHost();
 }
 
+const placeHolderContent = document.getElementsByClassName("row-4-left")[0];
+ function quizContentHolder() {
+     let holderQ = document.getElementById("quizHolder");
+     const tempHolder = document.createElement("div");
+     tempHolder.append(holderQ.content.cloneNode(true));
+     tempHolder.classList.add("ragon");
+     placeHolderContent.append(tempHolder);
+     setTimeout( () => {
+         quizHost();
+     }, 3000);
+     
+ }
+  
+    function quizHost() {
+        let url = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/repo/grammerQuiz.html";
+        let header3 = new Headers();
+            header3.append("Content-Type", "text/plain");
+        let init3 = {
+        method: "GET",
+        mode: "cors",
+        headers: header3,
+        cache: "default"
+    }
+       let req3 = new Request(url, init3);
+       fetch(req3)
+       .then(response => {
+           return response.text();
+       })
+       .then(data => {
+           let parser = new DOMParser();
+           let quizer =  parser.parseFromString(data, "text/html");
+           let quizerData = quizer.getElementById("quizInter").content.cloneNode(true);
+           let placeQuiz = document.createElement("div");
+           placeQuiz.append(quizerData);
+           placeHolderContent.removeChild(placeHolderContent.children[0]);
+           placeHolderContent.append(placeQuiz);
+       })
+       .then( () => {
+        let ansOneA = document.getElementsByClassName("answer-1")[0];
+        let ansTwoA = document.getElementsByClassName("answer-2")[0];
+        let ansThreeA = document.getElementsByClassName("answer-3")[0];
+        let groupAanswers = [ansOneA, ansTwoA, ansThreeA];
+        for (let i = 0; i < groupAanswers.length; i++) {
+            groupAanswers[i].addEventListener("click", questionOne, false);
+        }
+        let ansOneB = document.getElementsByClassName("answer-1")[1];
+        let ansTwoB = document.getElementsByClassName("answer-2")[1];
+        let ansThreeB = document.getElementsByClassName("answer-3")[1];
+        let groupBanswers = [ansOneB, ansTwoB, ansThreeB];
+        for (let i = 0; i < groupBanswers.length; i++) {
+         groupBanswers[i].addEventListener("click", questionTwo, false);
+        }
+        let ansOneC = document.getElementsByClassName("answer-1")[2];
+        let ansTwoC = document.getElementsByClassName("answer-2")[2];
+        let ansThreeC = document.getElementsByClassName("answer-3")[2];
+        let groupCanswers = [ansOneC, ansTwoC, ansThreeC];
+        for (let i = 0; i < groupCanswers.length; i++) {
+         groupCanswers[i].addEventListener("click", questionThree, false);
+        }
+        const userResult = document.getElementsByClassName("grade")[0];
+        userResult.addEventListener("click", quizResult, false);
+       })
+       
+    }
 
-function maxi() {
-    let loaders = document.getElementById("templ").content.cloneNode(true);
-    let targs = document.getElementsByClassName("screen")[0];
-    targs.append(loaders);
-}
+
+
+    function questionOne() {
+        const home = document.getElementsByClassName("item-n-1")[0];
+        if (home.children.length > 0) {
+            let n = 0;
+            let start = setInterval( () => {
+                n++;
+                home.children[0].style.cssText = `
+            animation: shake 0.5s infinite;
+            background-color: #54C571;
+            `;
+            if (n > 6) {
+                clearInterval(start);
+                home.children[0].style.cssText = `
+                animation = "";
+                background-color: #54C571;
+                margin-left: 5px;`;
+                
+            }
+            }, 100);
+            return;
+        }
+         home.appendChild(this);
+         this.style.marginLeft = "5px";
+         this.style.backgroundColor = "#54C571";
+         home.style.borderBottom = "0px";
+     }
+     let ansOneA = document.getElementsByClassName("answer-1")[0];
+     let ansTwoA = document.getElementsByClassName("answer-2")[0];
+     let ansThreeA = document.getElementsByClassName("answer-3")[0];
+     let groupAanswers = [ansOneA, ansTwoA, ansThreeA];
+     for (let i = 0; i < groupAanswers.length; i++) {
+         groupAanswers[i].addEventListener("click", questionOne, false);
+     }
+
+     function questionTwo() {
+        const home = document.getElementsByClassName("item-n-1")[1];
+        if (home.children.length > 0) {
+            let n = 0;
+            let start = setInterval( () => {
+                n++;
+                home.children[0].style.cssText = `
+            animation: shake 0.5s infinite;
+            background-color: #54C571;
+            `;
+            if (n > 6) {
+                clearInterval(start);
+                home.children[0].style.cssText = `
+                animation = "";
+                background-color: #54C571;
+                margin-left: 5px;`;
+            }
+            }, 100);
+            return;
+        }
+         home.appendChild(this);
+         this.style.marginLeft = "5px";
+         this.style.backgroundColor = "#54C571";
+         home.style.borderBottom = "0px";
+     }
+     let ansOneB = document.getElementsByClassName("answer-1")[1];
+     let ansTwoB = document.getElementsByClassName("answer-2")[1];
+     let ansThreeB = document.getElementsByClassName("answer-3")[1];
+     let groupBanswers = [ansOneB, ansTwoB, ansThreeB];
+     for (let i = 0; i < groupBanswers.length; i++) {
+         groupBanswers[i].addEventListener("click", questionTwo, false);
+     }
+
+     function questionThree() {
+        const home = document.getElementsByClassName("item-n-1")[2];
+        if (home.children.length > 0) {
+            let n = 0;
+            let start = setInterval( () => {
+                n++;
+                home.children[0].style.cssText = `
+            animation: shake 0.5s infinite;
+            background-color: #54C571;
+            `;
+            if (n > 6) {
+                clearInterval(start);
+                home.children[0].style.cssText = `
+                animation = "";
+                background-color: #54C571;
+                margin-left: 5px;`;
+            }
+            }, 100);
+            return;
+        }
+         home.appendChild(this);
+         this.style.marginLeft = "5px";
+         this.style.backgroundColor = "#54C571";
+         home.style.borderBottom = "0px"
+     }
+     let ansOneC = document.getElementsByClassName("answer-1")[2];
+     let ansTwoC = document.getElementsByClassName("answer-2")[2];
+     let ansThreeC = document.getElementsByClassName("answer-3")[2];
+     let groupCanswers = [ansOneC, ansTwoC, ansThreeC];
+     for (let i = 0; i < groupCanswers.length; i++) {
+         groupCanswers[i].addEventListener("click", questionThree, false);
+     }
+
+     function quizResult() {
+         let score = 0;
+         let stuAnswerA = document.getElementsByClassName("item-n-1")[0];
+         let stuAnswerB = document.getElementsByClassName("item-n-1")[1];
+         let stuAnswerC = document.getElementsByClassName("item-n-1")[2];
+         const mainView = document.getElementById("container-quiz");
+
+         if (stuAnswerA.children[0].textContent == "the other") {
+             document.getElementsByClassName("right")[0].style.display = "block";
+             score++;
+         } else {
+             document.getElementsByClassName("wrong")[0].style.display = "block";
+             stuAnswerA.children[0].style.backgroundColor = "#F70D1A";
+         }
+         if (stuAnswerB.children[0].textContent == "to say") {
+             document.getElementsByClassName("right")[1].style.display = "block";
+             score++;
+         } else {
+             document.getElementsByClassName("wrong")[1].style.display = "block";
+             stuAnswerB.children[0].style.backgroundColor = "#F70D1A";
+         }
+         if (stuAnswerC.children[0].textContent == "which") {
+             document.getElementsByClassName("right")[2].style.display = "block";
+             score++;
+         } else {
+             document.getElementsByClassName("wrong")[2].style.display = "block";
+             stuAnswerC.children[0].style.backgroundColor = "#F70D1A";
+         }
+         mainView.scrollIntoView(true);
+     }
+
+     const userResult = document.getElementsByClassName("grade")[0];
+     userResult.addEventListener("click", quizResult, false);
 
 
 
+
+
+   
