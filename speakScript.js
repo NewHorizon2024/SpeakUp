@@ -360,7 +360,7 @@ const placeHolderContent = document.getElementsByClassName("row-4-left")[0];
      placeHolderContent.append(tempHolder);
      setTimeout( () => {
          quizHost();
-     }, 3000);
+     }, 4000);
      
  }
   
@@ -434,7 +434,6 @@ const placeHolderContent = document.getElementsByClassName("row-4-left")[0];
                 animation = "";
                 background-color: #54C571;
                 margin-left: 5px;`;
-                
             }
             }, 100);
             return;
@@ -443,6 +442,7 @@ const placeHolderContent = document.getElementsByClassName("row-4-left")[0];
          this.style.marginLeft = "5px";
          this.style.backgroundColor = "#54C571";
          home.style.borderBottom = "0px";
+         home.parentElement.style.backgroundColor = "";
      }
      let ansOneA = document.getElementsByClassName("answer-1")[0];
      let ansTwoA = document.getElementsByClassName("answer-2")[0];
@@ -476,6 +476,7 @@ const placeHolderContent = document.getElementsByClassName("row-4-left")[0];
          this.style.marginLeft = "5px";
          this.style.backgroundColor = "#54C571";
          home.style.borderBottom = "0px";
+         home.parentElement.style.backgroundColor = "";
      }
      let ansOneB = document.getElementsByClassName("answer-1")[1];
      let ansTwoB = document.getElementsByClassName("answer-2")[1];
@@ -509,6 +510,7 @@ const placeHolderContent = document.getElementsByClassName("row-4-left")[0];
          this.style.marginLeft = "5px";
          this.style.backgroundColor = "#54C571";
          home.style.borderBottom = "0px"
+         home.parentElement.style.backgroundColor = "";
      }
      let ansOneC = document.getElementsByClassName("answer-1")[2];
      let ansTwoC = document.getElementsByClassName("answer-2")[2];
@@ -520,33 +522,90 @@ const placeHolderContent = document.getElementsByClassName("row-4-left")[0];
 
      function quizResult() {
          let score = 0;
+         let tracker = 0;
          let stuAnswerA = document.getElementsByClassName("item-n-1")[0];
          let stuAnswerB = document.getElementsByClassName("item-n-1")[1];
          let stuAnswerC = document.getElementsByClassName("item-n-1")[2];
+         let allGroups = document.getElementsByClassName("item-n-1");
          const mainView = document.getElementById("container-quiz");
 
+         if (stuAnswerA.children.length < 1) {
+             stuAnswerA.parentElement.style.backgroundColor = "lightgray";
+             stuAnswerA.parentElement.parentElement.scrollIntoView(false);
+             let cou = 0;
+             let pointing = setInterval( () => {
+                 cou++;
+                 stuAnswerA.parentElement.parentElement.style.animation = " shake 0.5s infinite";
+                 if (cou > 8) {
+                     clearInterval(pointing);
+                     stuAnswerA.parentElement.parentElement.style.animation = "";
+                 }
+             }, 100);
+             return;
+         }
+
+         if (stuAnswerB.children.length < 1) {
+            stuAnswerB.parentElement.style.backgroundColor = "lightgray";
+            stuAnswerB.parentElement.parentElement.scrollIntoView(false);
+            let cou = 0;
+            let pointing = setInterval( () => {
+                cou++;
+                stuAnswerB.parentElement.parentElement.style.animation = " shake 0.5s infinite";
+                if (cou > 8) {
+                    clearInterval(pointing);
+                    stuAnswerB.parentElement.parentElement.style.animation = "";
+                }
+            }, 100);
+            return;
+        }
+
+        if (stuAnswerC.children.length < 1) {
+            stuAnswerC.parentElement.style.backgroundColor = "lightgray";
+            stuAnswerC.parentElement.parentElement.scrollIntoView(false);
+            let cou = 0;
+            let pointing = setInterval( () => {
+                cou++;
+                stuAnswerC.parentElement.parentElement.style.animation = " shake 0.5s infinite";
+                if (cou > 8) {
+                    clearInterval(pointing);
+                    stuAnswerC.parentElement.parentElement.style.animation = "";
+                }
+            }, 100);
+            return;
+        }
+    
          if (stuAnswerA.children[0].textContent == "the other") {
              document.getElementsByClassName("right")[0].style.display = "block";
              score++;
          } else {
              document.getElementsByClassName("wrong")[0].style.display = "block";
-             stuAnswerA.children[0].style.backgroundColor = "#F70D1A";
+             stuAnswerA.children[0].style.backgroundColor = "#F70D1A"; 
          }
          if (stuAnswerB.children[0].textContent == "to say") {
              document.getElementsByClassName("right")[1].style.display = "block";
              score++;
+             
+            
          } else {
              document.getElementsByClassName("wrong")[1].style.display = "block";
              stuAnswerB.children[0].style.backgroundColor = "#F70D1A";
+             
          }
          if (stuAnswerC.children[0].textContent == "which") {
              document.getElementsByClassName("right")[2].style.display = "block";
              score++;
+             
+             
          } else {
              document.getElementsByClassName("wrong")[2].style.display = "block";
              stuAnswerC.children[0].style.backgroundColor = "#F70D1A";
+            
          }
-         mainView.scrollIntoView(true);
+         
+         
+         
+         
+        
      }
 
      const userResult = document.getElementsByClassName("grade")[0];
