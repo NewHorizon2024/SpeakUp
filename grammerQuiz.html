@@ -282,7 +282,141 @@
 
         </style>
 
-       
+        <script>
+           function questionOne() {
+              const home = document.getElementsByClassName("item-n-1")[0];
+              if (home.children.length > 0) {
+                  let n = 0;
+                  let start = setInterval( () => {
+                      n++;
+                      home.children[0].style.cssText = `
+                  animation: shake 0.5s infinite;
+                  background-color: #54C571;
+                  `;
+                  if (n > 6) {
+                      clearInterval(start);
+                      home.children[0].style.cssText = `
+                      animation = "";
+                      background-color: #54C571;
+                      margin-left: 5px;`;
+                      
+                  }
+                  }, 100);
+                  return;
+              }
+               home.appendChild(this);
+               this.style.marginLeft = "5px";
+               this.style.backgroundColor = "#54C571";
+               home.style.borderBottom = "0px";
+           }
+           let ansOneA = document.getElementsByClassName("answer-1")[0];
+           let ansTwoA = document.getElementsByClassName("answer-2")[0];
+           let ansThreeA = document.getElementsByClassName("answer-3")[0];
+           let groupAanswers = [ansOneA, ansTwoA, ansThreeA];
+           for (let i = 0; i < groupAanswers.length; i++) {
+               groupAanswers[i].addEventListener("click", questionOne, false);
+           }
+
+           function questionTwo() {
+              const home = document.getElementsByClassName("item-n-1")[1];
+              if (home.children.length > 0) {
+                  let n = 0;
+                  let start = setInterval( () => {
+                      n++;
+                      home.children[0].style.cssText = `
+                  animation: shake 0.5s infinite;
+                  background-color: #54C571;
+                  `;
+                  if (n > 6) {
+                      clearInterval(start);
+                      home.children[0].style.cssText = `
+                      animation = "";
+                      background-color: #54C571;
+                      margin-left: 5px;`;
+                  }
+                  }, 100);
+                  return;
+              }
+               home.appendChild(this);
+               this.style.marginLeft = "5px";
+               this.style.backgroundColor = "#54C571";
+               home.style.borderBottom = "0px";
+           }
+           let ansOneB = document.getElementsByClassName("answer-1")[1];
+           let ansTwoB = document.getElementsByClassName("answer-2")[1];
+           let ansThreeB = document.getElementsByClassName("answer-3")[1];
+           let groupBanswers = [ansOneB, ansTwoB, ansThreeB];
+           for (let i = 0; i < groupBanswers.length; i++) {
+               groupBanswers[i].addEventListener("click", questionTwo, false);
+           }
+
+           function questionThree() {
+              const home = document.getElementsByClassName("item-n-1")[2];
+              if (home.children.length > 0) {
+                  let n = 0;
+                  let start = setInterval( () => {
+                      n++;
+                      home.children[0].style.cssText = `
+                  animation: shake 0.5s infinite;
+                  background-color: #54C571;
+                  `;
+                  if (n > 6) {
+                      clearInterval(start);
+                      home.children[0].style.cssText = `
+                      animation = "";
+                      background-color: #54C571;
+                      margin-left: 5px;`;
+                  }
+                  }, 100);
+                  return;
+              }
+               home.appendChild(this);
+               this.style.marginLeft = "5px";
+               this.style.backgroundColor = "#54C571";
+               home.style.borderBottom = "0px"
+           }
+           let ansOneC = document.getElementsByClassName("answer-1")[2];
+           let ansTwoC = document.getElementsByClassName("answer-2")[2];
+           let ansThreeC = document.getElementsByClassName("answer-3")[2];
+           let groupCanswers = [ansOneC, ansTwoC, ansThreeC];
+           for (let i = 0; i < groupCanswers.length; i++) {
+               groupCanswers[i].addEventListener("click", questionThree, false);
+           }
+
+           function quizResult() {
+               let score = 0;
+               let stuAnswerA = document.getElementsByClassName("item-n-1")[0];
+               let stuAnswerB = document.getElementsByClassName("item-n-1")[1];
+               let stuAnswerC = document.getElementsByClassName("item-n-1")[2];
+               const mainView = document.getElementById("container-quiz");
+
+               if (stuAnswerA.children[0].textContent == "the other") {
+                   document.getElementsByClassName("right")[0].style.display = "block";
+                   score++;
+               } else {
+                   document.getElementsByClassName("wrong")[0].style.display = "block";
+                   stuAnswerA.children[0].style.backgroundColor = "#F70D1A";
+               }
+               if (stuAnswerB.children[0].textContent == "to say") {
+                   document.getElementsByClassName("right")[1].style.display = "block";
+                   score++;
+               } else {
+                   document.getElementsByClassName("wrong")[1].style.display = "block";
+                   stuAnswerB.children[0].style.backgroundColor = "#F70D1A";
+               }
+               if (stuAnswerC.children[0].textContent == "which") {
+                   document.getElementsByClassName("right")[2].style.display = "block";
+                   score++;
+               } else {
+                   document.getElementsByClassName("wrong")[2].style.display = "block";
+                   stuAnswerC.children[0].style.backgroundColor = "#F70D1A";
+               }
+               mainView.scrollIntoView(true);
+           }
+
+           const userResult = document.getElementsByClassName("grade")[0];
+           userResult.addEventListener("click", quizResult, false);
+        </script>
     </template>
 
 
