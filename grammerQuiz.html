@@ -307,7 +307,6 @@
                this.style.marginLeft = "5px";
                this.style.backgroundColor = "#54C571";
                home.style.borderBottom = "0px";
-               
            }
            let ansOneA = document.getElementsByClassName("answer-1")[0];
            let ansTwoA = document.getElementsByClassName("answer-2")[0];
@@ -373,7 +372,7 @@
                home.appendChild(this);
                this.style.marginLeft = "5px";
                this.style.backgroundColor = "#54C571";
-               home.style.borderBottom = "0px";
+               home.style.borderBottom = "0px"
            }
            let ansOneC = document.getElementsByClassName("answer-1")[2];
            let ansTwoC = document.getElementsByClassName("answer-2")[2];
@@ -382,6 +381,41 @@
            for (let i = 0; i < groupCanswers.length; i++) {
                groupCanswers[i].addEventListener("click", questionThree, false);
            }
+
+           function quizResult() {
+               let score = 0;
+               let stuAnswerA = document.getElementsByClassName("item-n-1")[0];
+               let stuAnswerB = document.getElementsByClassName("item-n-1")[1];
+               let stuAnswerC = document.getElementsByClassName("item-n-1")[2];
+
+               if (stuAnswerA.children[0].textContent == "the other") {
+                   document.getElementsByClassName("right")[0].style.display = "block";
+                   score++;
+               } else {
+                   document.getElementsByClassName("wrong")[0].style.display = "block";
+                   stuAnswerA.children[0].style.backgroundColor = "#F70D1A";
+               }
+               if (stuAnswerB.children[0].textContent == "to say") {
+                   document.getElementsByClassName("right")[1].style.display = "block";
+                   score++;
+               } else {
+                   document.getElementsByClassName("wrong")[1].style.display = "block";
+                   stuAnswerB.children[0].style.backgroundColor = "#F70D1A";
+               }
+               if (stuAnswerC.children[0].textContent == "which") {
+                   document.getElementsByClassName("right")[2].style.display = "block";
+                   score++;
+               } else {
+                   document.getElementsByClassName("wrong")[2].style.display = "block";
+                   stuAnswerC.children[0].style.backgroundColor = "#F70D1A";
+               }
+               alert(score);
+
+           }
+
+
+           const userResult = document.getElementsByClassName("grade")[0];
+           userResult.addEventListener("click", quizResult, false);
 
 
            
