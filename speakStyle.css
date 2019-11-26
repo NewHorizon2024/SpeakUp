@@ -447,8 +447,6 @@ header {
     display: flex;
     flex-direction: row;
     overflow: hidden;
-  
-
 }
 .screen4 {
     width: 500px;
@@ -468,7 +466,6 @@ header {
     display: flex;
     flex-direction: row;
     overflow: hidden;
-    
 }
 
 .item-arrow-left {
@@ -520,7 +517,6 @@ header {
     background-color: #212121;
     opacity: 0.5;
     color: #ffffff;
-
 }
 
 #video {
@@ -591,6 +587,12 @@ header {
 .blocker {
     display: block;
 }
+.mark {
+    border-bottom: 4px solid #00594F;
+    background-color: #00594F;
+    color: #ffffff;
+    padding: 5px;
+}
 .coker {
     display: none;
 }
@@ -614,65 +616,11 @@ header {
 .courseContent:hover {
     opacity: 1;
 }
-@media screen and  (max-width: 420px) {
-    #caption {
-        width: 100vw;
-        padding: 10px;
-    }
-    #intro-interact {
-        width: 100vw;
-    }
-    .mot-header {
-        width: 100vw;
-    }
-    .mot-text {
-        line-height: 1;
-        font-family: 14px;
-        font-family: sans-serif;
-    }
-    .motivation-content {
-        width: 100vw;
-        padding-left: 5px;
-    }
-    #logo {
-        display: none;
-    }
-    .lessons-container {
-        display: none;
-    }
-    .menu-btn {
-        display: none;
-    }
-    #clickable {
-        display: flex;
-    }
-    #menu {
-        justify-content: center;
-    }
-    header {
-        justify-content: center;
-    }
-    #user-offers {
-        display: none;
-    }
-    .nav-bar-english-header {
-        display: none;
-    }
-    .gallery {
-        display: none;
-    }
-    .left-side {
-        width: 100vw;
-    }
-    .right-side {
-        width: 100vw;
-    }
-    .shadow {
-        display: none;
-    }
-    #mobileCourse {
-        display: block;
-        margin-top: 0px;
-    }
-    
+.row-4-left {
+    width: 50vw;
 }
+.ragon {
+    width: 50vw;
+    height: auto;
+}
+
