@@ -5,6 +5,7 @@
         <link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
     </head>
     <body>
+    <template id = "quizInter">
         <div id = "container-quiz">
             <div class = "introQuiz">
                 Grammer Quiz
@@ -387,6 +388,7 @@
                let stuAnswerA = document.getElementsByClassName("item-n-1")[0];
                let stuAnswerB = document.getElementsByClassName("item-n-1")[1];
                let stuAnswerC = document.getElementsByClassName("item-n-1")[2];
+               const mainView = document.getElementById("container-quiz");
 
                if (stuAnswerA.children[0].textContent == "the other") {
                    document.getElementsByClassName("right")[0].style.display = "block";
@@ -409,18 +411,13 @@
                    document.getElementsByClassName("wrong")[2].style.display = "block";
                    stuAnswerC.children[0].style.backgroundColor = "#F70D1A";
                }
-               alert(score);
-
+               mainView.scrollIntoView(true);
            }
-
 
            const userResult = document.getElementsByClassName("grade")[0];
            userResult.addEventListener("click", quizResult, false);
-
-
-           
-
         </script>
+    </template>
 
 
 
