@@ -5,6 +5,7 @@
         <link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
     </head>
     <body>
+        <template id = "diagram-host">
             <div class = "diagram-container">
                     <div class = "diagram-header">
                         Where do you stand
@@ -50,16 +51,6 @@
                             every course you will be proficient in using basic English grammar.
                         </div>
                     </div>
-                    <!--<div class = "categoryInstructions">
-                        <div class = "category-a">Category A+</div>
-                        <div class = "category-instructions">
-                            <b>Elementary</b> grammer level, The best course fit your category is <b class = "indi">
-                                <a href = "#" class = "takeoff-user">Elementary English.</a>
-                            </b>
-                            With 26 course covering all topics in basic English Grammer and one quiz at the end of 
-                            every course you will be proficient in using basic English grammar.
-                        </div>-->
-                    
                     <div class = "categoryInstructions">
                         <div class = "category-a">Category A++</div>
                         <div class = "category-instructions">
@@ -238,7 +229,7 @@
                         display: flex;
                         flex-direction: column;
                         display: none;
-
+                        transition: 0.5s ease-in;
                     }
                     .category-a {
                         width: 120px;
@@ -314,15 +305,12 @@
                                     default: 
                                     return; 
                             }
-                            
-                          // alert(measureBar.width);
                         }, 3000);
-
-                    
+                        
                     }
                 </script>
                 
 
-
+            </template>
     </body>
 </html>
