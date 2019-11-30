@@ -405,54 +405,6 @@ function diagramHost() {
    .catch(err => alert(err.message));
 }
 
-    function setCategory() {
-        let bar = document.getElementsByClassName("fill")[0];
-        let ind = document.getElementsByClassName("thumb")[0];
-        let firstRoad = document.getElementsByClassName("fill-road")[0];
-        let secRoad = document.getElementsByClassName("fill-road2")[0];
-        let fillCic = document.getElementsByClassName("fill-cic")[0];
-        const instracutions = document.getElementsByClassName("categoryInstructions");
-
-                        setTimeout( () => {
-                            firstRoad.style.height = "100%";
-                        }, 1000);
-
-                        setTimeout( () => {
-                            fillCic.style.width = "100%";
-                        }, 1500);
-
-                        setTimeout( () => {
-                            secRoad.style.height = "100%";
-                        }, 2000);
-
-
-
-                        bar.style.width = "40.25vw";
-                        ind.style.marginLeft = "39vw";
-
-                        let measureBar = getComputedStyle(bar);
-
-                        setTimeout( () => {
-                            
-                            switch(measureBar.width) {
-                                case "221.967px":
-                                    instracutions[0].classList.add("showInstruction");
-                                    break;
-                                case "385.883px":
-                                    instracutions[1].classList.add("showInstruction");
-                                    break;
-                                case "549.8px":
-                                    instracutions[2].classList.add("showInstruction");
-                                    break;
-                                    default: 
-                                    return; 
-                            }
-                           // determine();
-                        }, 3000);
-    }
-
-    
-  
     function quizHost() {
         let url = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/repo/grammerQuiz.html";
         let header3 = new Headers();
