@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Diagram</title>
+        <link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
+    </head>
+    <body>
+            <div class = "diagram-container">
+                    <div class = "diagram-header">
+                        Where do you stand
+                    </div>
+                    <div class = "insta">
+                        <b>Instructions</b>: After answering the grammer quiz check where do you stand!
+                    </div>
+                    <div class = "indicator-container">
+                        <div class = "indicator">
+                            <div class = "fill"></div>
+                            <div class = "thumb"></div>
+                        </div>
+                        <div class = "stations">
+                            <div class = "station station-1">A</div>
+                            <div class = "station station-2">A+</div>
+                            <div class = "station station-3">A++</div>
+                            <div class = "station station-4">B</div>
+                        </div>
+                    </div>
+                    <div class = "category">Categorize Me</div>
+                    <div class = "road-1">
+                        <div class = "myRoad">
+                            <div class = "fill-road"></div>
+                        </div>
+                    </div>
+                    <div class = "cic">
+                        <div class = "cic-round">
+                            <div class = "fill-cic"></div>
+                        </div>
+                    </div>
+                    <div class = "road-2">
+                        <div class = "myRoad2">
+                            <div class = "fill-road2"></div>
+                        </div>
+                    </div>
+                    <div class = "categoryInstructions">
+                        <div class = "category-a">Category A</div>
+                        <div class = "category-instructions">
+                            <b>Elementary</b> grammer level, The best course fit your category is <b class = "indi">
+                                <a href = "#" class = "takeoff-user">Elementary English.</a>
+                            </b>
+                            With 26 course covering all topics in basic English Grammer and one quiz at the end of 
+                            every course you will be proficient in using basic English grammar.
+                        </div>
+                    </div>
+                    <div class = "categoryInstructions">
+                        <div class = "category-a">Category A+</div>
+                        <div class = "category-instructions">
+                            <b>Elementary</b> grammer level, The best course fit your category is <b class = "indi">
+                                <a href = "#" class = "takeoff-user">Elementary English.</a>
+                            </b>
+                            With 26 course covering all topics in basic English Grammer and one quiz at the end of 
+                            every course you will be proficient in using basic English grammar.
+                        </div>
+                    </div>
+                    <div class = "categoryInstructions">
+                        <div class = "category-a">Category A++</div>
+                        <div class = "category-instructions">
+                            <b>Pre-intermediate</b> grammer level, The best course fit your category is <b class = "indi">
+                                <a href = "#" class = "takeoff-user">Pre-intermediate English</a>
+                            </b>
+                            With 24 course covering all topics in Pre-intermediate English Grammer and one quiz at the end of 
+                            every course you will be proficient Pre-intermediate english grammer.
+                        </div>
+                    </div>
+                    <div class = "categoryInstructions">
+                        <div class = "category-a">Category B</div>
+                        <div class = "category-instructions">
+                            <b>Low Intermediate</b> grammer level, The best course fit your category is <b class = "indi">
+                                <a href = "#" class = "takeoff-user">Low Intermediate English</a>
+                            </b>
+                            You are good to go to most intermediate english grammer and learn them, Our recommendation is to take
+                            all quizes in <b class = "indi">
+                                <a href = "#" class = "takeoff-user">Pre-intermediate English</a>
+                                and continue to next near level B <b class = "indi">
+                                    <a href = "#" class = "takeoff-user">English Time course.</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <style>
+                    .diagram-container {
+                        width: 50vw;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-around;
+                        align-content: center;
+                    }
+                    .diagram-header {
+                        font-family: Alegreya Sans;
+                        font-size: 35px;
+                        color: #ffffff;
+                        background-color:#00594F;
+                        width: inherit;
+                        height: 100px;
+                        text-align: center;
+                        line-height: 2.5;
+                    }
+                    .indicator-container {
+                        width: 45vw;
+                        height: auto;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .indicator {
+                        position: relative;
+                        width: inherit;
+                        height: 8px;
+                        background-color: lightgray;
+                        border-radius: 10px;
+                        margin-top: 50px;
+                    }
+                    .thumb {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 100%;
+                        background-color: #ffffff;
+                        border: 5px solid #00594F;
+                        margin-left: 0vw;
+                        transition: 0.5s ease-in-out;
+                    }
+                    .fill {
+                        width: 0vw;
+                        height: inherit;
+                        background-color: #54C571;
+                        transition: 0.5s ease-in-out;
+                        border-radius: 10px;
+                    }
+                    .stations {
+                        display: flex;
+                        justify-content: space-around;
+                        width: inherit;
+                        margin-top: 10px;
+                    }
+                    .insta {
+                        font-family: Alegreya Sans;
+                    }
+                    .category {
+                        width: 250px;
+                        height: 40px;
+                        cursor: pointer;
+                        margin-top: 50px;
+                        border-radius: 10px;
+                        color: #ffffff;
+                        background-color: #00594F;
+                        text-align: center;
+                        line-height: 2;
+                        font-family: Alegreya Sans;
+                        font-size: 20px;
+                    }
+                    .road-1 {
+                        width: 250px;
+                        height: 40px;
+                        position: relative;
+                    }
+                    .road-2 {
+                        width: 250px;
+                        height: 40px;
+                        position: relative;
+                    }
+                    .myRoad {
+                        position: absolute;
+                        width: 5px;
+                        height: 40px;
+                        background-color: #ffffff;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        top: 0;
+                        margin: auto;
+                    }
+                    .myRoad2 {
+                        position: absolute;
+                        width: 5px;
+                        height: 40px;
+                        background-color: #ffffff;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        top: 0;
+                        margin: auto;
+                    }
+                    .cic {
+                        width: 250px;
+                        height: 20px;
+                        position: relative;
+                    }
+                    .cic-round {
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 100%;
+                        background-color: #ffffff;
+                        
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                    }
+                    .fill-cic {
+                        width: 0%;
+                        height: inherit;
+                        border-radius: inherit;
+                        transition: 0.5s ease-in-out;
+                        background-color: #00594F;
+                    }
+                    .fill-road {
+                        width: inherit;
+                        height: 0%;
+                        transition: 0.5s ease-in-out;
+                        background-color: #00594F;
+                    }
+                    .fill-road2 {
+                        width: inherit;
+                        height: 0%;
+                        transition: 0.5s ease-in-out;
+                        background-color: #00594F;
+                    }
+                    .categoryInstructions {
+                        width: 500px;
+                        height: 180px;
+                        border: 2px solid lightgray;
+                        border-radius: 20px;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .category-a {
+                        width: 120px;
+                        height: 40px;
+                        background-color: #00594F;
+                        color: #ffffff;
+                        font-family: Alegreya Sans;
+                        margin-left: 20px;
+                        margin-top: 10px;
+                        font-size: 20px;
+                        text-align: center;
+                        border-radius: 10px;
+                        line-height: 2;
+                        box-shadow:  0px 10px 0px 10px #ffffff;
+                        z-index: 2;
+                    }
+                    .category-instructions {
+                        width: 490px;
+                        height: 100%;
+                        background-color: #F5F5F5;
+                        border-radius: 0 0 20px 20px;
+                        z-index: 1;
+                        font-family: Alegreya Sans;
+                        padding-top: 25px;
+                        padding-left: 10px;
+                    }
+                    .indi a {
+                        color: #00594F;
+                    }
+                </style>
+                <script>
+                
+                    window.onclick = function() {
+                        let bar = document.getElementsByClassName("fill")[0];
+                        let ind = document.getElementsByClassName("thumb")[0];
+                        let firstRoad = document.getElementsByClassName("fill-road")[0];
+                        let secRoad = document.getElementsByClassName("fill-road2")[0];
+                        let fillCic = document.getElementsByClassName("fill-cic")[0];
+
+                        setTimeout( () => {
+                            firstRoad.style.height = "100%";
+                        }, 1000);
+
+                        setTimeout( () => {
+                            fillCic.style.width = "100%";
+                        }, 1500);
+
+                        setTimeout( () => {
+                            secRoad.style.height = "100%";
+                        }, 2000);
+
+
+
+
+                        bar.style.width = "40.25vw";
+                        ind.style.marginLeft = "39vw";
+                    }
+                </script>
+                
+
+
+    </body>
+</html>
