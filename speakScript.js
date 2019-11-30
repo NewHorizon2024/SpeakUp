@@ -348,10 +348,11 @@ window.onload = function() {
     render();
     openMobileContentCourse();
     quizContentHolder();
-  // quizHost();
+    quizContentHolder2();
 }
 
 const placeHolderContent = document.getElementsByClassName("row-4-left")[0];
+const placeHolderContentRight = document.getElementsByClassName("row-4-right")[0];
  function quizContentHolder() {
      let holderQ = document.getElementById("quizHolder");
      const tempHolder = document.createElement("div");
@@ -361,8 +362,96 @@ const placeHolderContent = document.getElementsByClassName("row-4-left")[0];
      setTimeout( () => {
          quizHost();
      }, 4000);
-     
  }
+ function quizContentHolder2() {
+    let holderQ = document.getElementById("quizHolder");
+    const tempHolder = document.createElement("div");
+    tempHolder.append(holderQ.content.cloneNode(true));
+    tempHolder.classList.add("ragon");
+    placeHolderContentRight.append(tempHolder);
+    setTimeout( () => {
+       diagramHost();
+    }, 4000);
+}
+
+function diagramHost() {
+    let url = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/master/quizDiagram.html";
+    let header3 = new Headers();
+        header3.append("Content-Type", "text/plain");
+    let init3 = {
+    method: "GET",
+    mode: "cors",
+    headers: header3,
+    cache: "default"
+}
+   let req3 = new Request(url, init3);
+   fetch(req3)
+   .then(response => {
+       return response.text();
+   })
+   .then(data => {
+       let parser = new DOMParser();
+       let quizer =  parser.parseFromString(data, "text/html");
+       let quizerData = quizer.getElementById("diagram-host").content.cloneNode(true);
+       let placeQuiz = document.createElement("div");
+       placeQuiz.append(quizerData);
+       placeHolderContentRight.removeChild(placeHolderContentRight.children[0]);
+       placeHolderContentRight.append(placeQuiz);
+   })
+   .then( () => {
+       const userClickCategory = document.getElementsByClassName("category")[0];
+       userClickCategory.addEventListener("click", determine, false);
+   })
+   .catch(err => alert(err.message));
+}
+
+    function setCategory() {
+        let bar = document.getElementsByClassName("fill")[0];
+        let ind = document.getElementsByClassName("thumb")[0];
+        let firstRoad = document.getElementsByClassName("fill-road")[0];
+        let secRoad = document.getElementsByClassName("fill-road2")[0];
+        let fillCic = document.getElementsByClassName("fill-cic")[0];
+        const instracutions = document.getElementsByClassName("categoryInstructions");
+
+                        setTimeout( () => {
+                            firstRoad.style.height = "100%";
+                        }, 1000);
+
+                        setTimeout( () => {
+                            fillCic.style.width = "100%";
+                        }, 1500);
+
+                        setTimeout( () => {
+                            secRoad.style.height = "100%";
+                        }, 2000);
+
+
+
+                        bar.style.width = "40.25vw";
+                        ind.style.marginLeft = "39vw";
+
+                        let measureBar = getComputedStyle(bar);
+
+                        setTimeout( () => {
+                            
+                            switch(measureBar.width) {
+                                case "221.967px":
+                                    instracutions[0].classList.add("showInstruction");
+                                    break;
+                                case "385.883px":
+                                    instracutions[1].classList.add("showInstruction");
+                                    break;
+                                case "549.8px":
+                                    instracutions[2].classList.add("showInstruction");
+                                    break;
+                                    default: 
+                                    return; 
+                            }
+                           // determine();
+                        }, 3000);
+    }
+
+    
   
     function quizHost() {
         let url = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/repo/grammerQuiz.html";
@@ -413,8 +502,9 @@ const placeHolderContent = document.getElementsByClassName("row-4-left")[0];
         const userResult = document.getElementsByClassName("grade")[0];
         userResult.addEventListener("click", quizResult, false);
        })
-       
     }
+
+
 
 
 
@@ -519,10 +609,11 @@ const placeHolderContent = document.getElementsByClassName("row-4-left")[0];
      for (let i = 0; i < groupCanswers.length; i++) {
          groupCanswers[i].addEventListener("click", questionThree, false);
      }
-
+    
+     let globalCounter = 0;
      function quizResult() {
-         let score = 0;
          let tracker = 0;
+         let score = 0;
          let stuAnswerA = document.getElementsByClassName("item-n-1")[0];
          let stuAnswerB = document.getElementsByClassName("item-n-1")[1];
          let stuAnswerC = document.getElementsByClassName("item-n-1")[2];
@@ -574,45 +665,105 @@ const placeHolderContent = document.getElementsByClassName("row-4-left")[0];
             return;
         }
     
-         if (stuAnswerA.children[0].textContent == "the other") {
-             document.getElementsByClassName("right")[0].style.display = "block";
-             score++;
-         } else {
-             document.getElementsByClassName("wrong")[0].style.display = "block";
-             stuAnswerA.children[0].style.backgroundColor = "#F70D1A"; 
-         }
-         if (stuAnswerB.children[0].textContent == "to say") {
-             document.getElementsByClassName("right")[1].style.display = "block";
-             score++;
-             
+        if (stuAnswerA.children[0].textContent == "the other") {
+            document.getElementsByClassName("right")[0].style.display = "block";
+            score++;
             
-         } else {
-             document.getElementsByClassName("wrong")[1].style.display = "block";
-             stuAnswerB.children[0].style.backgroundColor = "#F70D1A";
-             
-         }
-         if (stuAnswerC.children[0].textContent == "which") {
-             document.getElementsByClassName("right")[2].style.display = "block";
-             score++;
-             
-             
-         } else {
-             document.getElementsByClassName("wrong")[2].style.display = "block";
-             stuAnswerC.children[0].style.backgroundColor = "#F70D1A";
-            
-         }
-         
-         
-         
-         
-        
+        } else {
+            document.getElementsByClassName("wrong")[0].style.display = "block";
+            stuAnswerA.children[0].style.backgroundColor = "#F70D1A"; 
+        }
+        if (stuAnswerB.children[0].textContent == "to say") {
+            document.getElementsByClassName("right")[1].style.display = "block";
+            score++;
+           
+        } else {
+            document.getElementsByClassName("wrong")[1].style.display = "block";
+            stuAnswerB.children[0].style.backgroundColor = "#F70D1A";
+        }
+        if (stuAnswerC.children[0].textContent == "which") {
+            document.getElementsByClassName("right")[2].style.display = "block";
+            score++;
+           
+        } else {
+            document.getElementsByClassName("wrong")[2].style.display = "block";
+            stuAnswerC.children[0].style.backgroundColor = "#F70D1A";
+        }  
      }
 
      const userResult = document.getElementsByClassName("grade")[0];
      userResult.addEventListener("click", quizResult, false);
 
+     
+     function determine() {
+        let stuAnswerA = document.getElementsByClassName("item-n-1")[0];
+        let stuAnswerB = document.getElementsByClassName("item-n-1")[1];
+        let stuAnswerC = document.getElementsByClassName("item-n-1")[2];
 
+        let score = 0;
 
+        let bar = document.getElementsByClassName("fill")[0];
+        let ind = document.getElementsByClassName("thumb")[0];
+        let firstRoad = document.getElementsByClassName("fill-road")[0];
+        let secRoad = document.getElementsByClassName("fill-road2")[0];
+        let fillCic = document.getElementsByClassName("fill-cic")[0];
+        const instracutions = document.getElementsByClassName("categoryInstructions");
 
+        if (stuAnswerA.children[0].textContent == "the other") {
+            score++;
+        } 
+        if (stuAnswerB.children[0].textContent == "to say") {
+            score++; 
+        }
+        if (stuAnswerC.children[0].textContent == "which") {
+            score++;
+        }
+            setTimeout( () => {
+                 firstRoad.style.height = "100%";
+                        }, 1000);
 
-   
+                        setTimeout( () => {
+                            fillCic.style.width = "100%";
+                        }, 1500);
+
+                        setTimeout( () => {
+                            secRoad.style.height = "100%";
+                        }, 2000);
+
+                        if (score == 1) {
+                            bar.style.width = "16.25vw";
+                            ind.style.marginLeft = "15vw";
+                        }
+                        if (score == 2) {
+                            bar.style.width = "28.25vw";
+                            ind.style.marginLeft = "27vw";
+                        }
+                        if (score == 3) {
+                            bar.style.width = "40.25vw";
+                            ind.style.marginLeft = "39vw";
+                        }
+
+                        let measureBar = getComputedStyle(bar);
+
+                        setTimeout( () => {
+                
+                            switch(measureBar.width) {
+                                case "221.967px":
+                                    instracutions[0].classList.add("showInstruction");
+                                    break;
+                                case "385.883px":
+                                    instracutions[1].classList.add("showInstruction");
+                                    break;
+                                case "549.8px":
+                                    instracutions[2].classList.add("showInstruction");
+                                    break;
+                                    default: 
+                                    return;
+                            }
+                        }, 3500);
+                    }
+     
+                    
+                
+     
+    
