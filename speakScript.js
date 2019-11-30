@@ -459,7 +459,6 @@ function diagramHost() {
 
 
 
-
     function questionOne() {
         const home = document.getElementsByClassName("item-n-1")[0];
         if (home.children.length > 0) {
@@ -527,6 +526,7 @@ function diagramHost() {
      for (let i = 0; i < groupBanswers.length; i++) {
          groupBanswers[i].addEventListener("click", questionTwo, false);
      }
+
 
      function questionThree() {
         const home = document.getElementsByClassName("item-n-1")[2];
@@ -682,6 +682,11 @@ function diagramHost() {
                             secRoad.style.height = "100%";
                         }, 2000);
 
+                        if (score < 1) {
+                            bar.style.width = "5.25vw";
+                            ind.style.marginLeft = "4vw";
+                        }
+
                         if (score == 1) {
                             bar.style.width = "16.25vw";
                             ind.style.marginLeft = "15vw";
@@ -700,19 +705,21 @@ function diagramHost() {
                         setTimeout( () => {
                 
                             switch(measureBar.width) {
-                                case "221.967px":
+                                case "71.7px":
                                     instracutions[0].classList.add("showInstruction");
-                                    break;
-                                case "385.883px":
+                                case "221.967px":
                                     instracutions[1].classList.add("showInstruction");
                                     break;
-                                case "549.8px":
+                                case "385.883px":
                                     instracutions[2].classList.add("showInstruction");
+                                    break;
+                                case "549.8px":
+                                    instracutions[3].classList.add("showInstruction");
                                     break;
                                     default: 
                                     return;
                             }
-                        }, 3500);
+                        }, 3500); 
                     }
      
                     
