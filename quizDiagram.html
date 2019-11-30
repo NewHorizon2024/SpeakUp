@@ -50,7 +50,7 @@
                             every course you will be proficient in using basic English grammar.
                         </div>
                     </div>
-                    <div class = "categoryInstructions">
+                    <!--<div class = "categoryInstructions">
                         <div class = "category-a">Category A+</div>
                         <div class = "category-instructions">
                             <b>Elementary</b> grammer level, The best course fit your category is <b class = "indi">
@@ -58,8 +58,8 @@
                             </b>
                             With 26 course covering all topics in basic English Grammer and one quiz at the end of 
                             every course you will be proficient in using basic English grammar.
-                        </div>
-                    </div>
+                        </div>-->
+                    
                     <div class = "categoryInstructions">
                         <div class = "category-a">Category A++</div>
                         <div class = "category-instructions">
@@ -83,7 +83,7 @@
                                     <a href = "#" class = "takeoff-user">English Time course.</a>
                         </div>
                         </div>
-                    </div>
+                    
                 </div>
                 
                 <style>
@@ -205,7 +205,6 @@
                         height: 20px;
                         border-radius: 100%;
                         background-color: #ffffff;
-                        
                         left: 0;
                         right: 0;
                         top: 0;
@@ -238,6 +237,8 @@
                         border-radius: 20px;
                         display: flex;
                         flex-direction: column;
+                        display: none;
+
                     }
                     .category-a {
                         width: 120px;
@@ -256,7 +257,7 @@
                     }
                     .category-instructions {
                         width: 490px;
-                        height: 100%;
+                        height: 105px;
                         background-color: #F5F5F5;
                         border-radius: 0 0 20px 20px;
                         z-index: 1;
@@ -267,6 +268,9 @@
                     .indi a {
                         color: #00594F;
                     }
+                    .showInstruction {
+                        display: flex;
+                    }
                 </style>
                 <script>
                 
@@ -276,6 +280,7 @@
                         let firstRoad = document.getElementsByClassName("fill-road")[0];
                         let secRoad = document.getElementsByClassName("fill-road2")[0];
                         let fillCic = document.getElementsByClassName("fill-cic")[0];
+                        const instracutions = document.getElementsByClassName("categoryInstructions");
 
                         setTimeout( () => {
                             firstRoad.style.height = "100%";
@@ -289,11 +294,31 @@
                             secRoad.style.height = "100%";
                         }, 2000);
 
-
-
-
                         bar.style.width = "40.25vw";
                         ind.style.marginLeft = "39vw";
+
+                        let measureBar = getComputedStyle(bar);
+
+                        setTimeout( () => {
+                            
+                            switch(measureBar.width) {
+                                case "221.967px":
+                                    instracutions[0].classList.add("showInstruction");
+                                    break;
+                                case "385.883px":
+                                    instracutions[1].classList.add("showInstruction");
+                                    break;
+                                case "549.8px":
+                                    instracutions[2].classList.add("showInstruction");
+                                    break;
+                                    default: 
+                                    return; 
+                            }
+                            
+                          // alert(measureBar.width);
+                        }, 3000);
+
+                    
                     }
                 </script>
                 
