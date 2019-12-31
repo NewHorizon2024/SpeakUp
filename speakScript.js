@@ -375,7 +375,7 @@ const placeHolderContentRight = document.getElementsByClassName("row-4-right")[0
 }
 
 function diagramHost() {
-    let url = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/master/quizDiagram.html";
+    let url = "https://raw.githubusercontent.com/freelancer2020/SpeakUp/master/Templates/quizDiagram.html";
     let header3 = new Headers();
         header3.append("Content-Type", "text/plain");
     let init3 = {
