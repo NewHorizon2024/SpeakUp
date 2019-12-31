@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Content Holder</title>
+    </head>
+    <body>
+        <template id = "quizHolder">
+            <div class = "container-holder">
+                <div id = "head-quiz"></div>
+                <div class = "quiz-row">
+                    <div class = "sel-holder"></div>
+                    <div class = "sel-holder"></div>
+                    <div class = "sel-holder"></div>
+                </div>
+                <div class = "quiz-row">
+                    <div class = "sel-holder"></div>
+                    <div class = "sel-holder"></div>
+                    <div class = "sel-holder"></div>
+                </div>
+                <div class = "quiz-row">
+                    <div class = "sel-holder"></div>
+                    <div class = "sel-holder"></div>
+                    <div class = "sel-holder"></div>
+                </div>
+                <div id = "result-holder"></div>
+            </div>
+            
+            <style>
+                .container-holder {
+                    width: 50vw;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    
+                }
+                #head-quiz {
+                    width: inherit;
+                    height: 100px;
+                    background-color: #F9F8F6;
+                    animation: flash 3s infinite;
+                }
+                .quiz-row {
+                    width: 45vw;
+                    height: 100px;
+                    display: flex;
+                    justify-content: space-around;
+                }
+                .sel-holder {
+                    width: 150px;
+                    height: 50px;
+                    background-color: #F9F8F6;
+                    border-radius: 10px;
+                    align-self: center;
+                    animation: flash 3s infinite;
+                }
+                #result-holder {
+                    width: 250px;
+                    height: 40px;
+                    background-color: #F9F8F6;
+                    border-radius: 10px;
+                    animation: flash 3s infinite;
+                }
+                @keyframes flash {
+                    0% {
+                        background-color: #F9F8F6;
+                    }
+                    25% {
+                        background-color: #E5E4E2;
+                    }
+                    50% {
+                        background-color: #F9F8F6;
+                    }
+                    75% {
+                        background-color: #E5E4E2;
+                    }
+                    100% {
+                        background-color: #F9F8F6;
+                    }
+                }
+            </style>
+            
+
+
+
+        </template>
+        <script>
+                window.onload = function() {
+                    let targ = document.getElementById("quizHolder");
+                    document.body.append(targ.content.cloneNode(true));
+                }
+            </script>
+
+
+
+
+
+
+
+
+
+    </body>
+</html>

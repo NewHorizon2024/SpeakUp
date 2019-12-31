@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mobule course templates</title>
+        <link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
+    </head>
+</html>
+<body>
+
+    <template id = "courseMobile">
+        <style>
+            .courseContent {
+                width: 35%;
+                height: 70px;
+                background-color: #00594F;
+                border-radius: 20px;
+                opacity: 0.5;
+                color: #ffffff;
+                text-align: center;
+                line-height: 2;
+                margin-bottom: 3px;
+                transition: 0.5s ease-in-out;
+                font-family: Alegreya Sans;
+            }
+            .courseContent:hover {
+                opacity: 1;
+            }
+        </style>
+        <div class = "courseContent">To be</div>
+        <div class = "courseContent">Basic grammar</div>
+        <div class = "courseContent"> Verb forms</div>
+        <div class = "courseContent"> Negative,questions</div>
+        <div class = "courseContent">There is /there/ articles plural</div>
+        <div class = "courseContent">Revision and imperative</div>
+        <div class = "courseContent">The verb CAN</div>
+        <div class = "courseContent">Past simple(to be)</div>
+        <div class = "courseContent">Past simple</div>
+        <div class = "courseContent">Past simple(N&Q) </div>
+        <div class = "courseContent">Future tense</div>
+        <div class = "courseContent">Revision</div>
+        <div class = "courseContent">Comparative &adjectives</div>
+        <div class = "courseContent">Would like</div>
+        <div class = "courseContent">Present continuous </div>
+    </template>
+
+    
+
+
+    <div id = "test"></div>
+    <style>
+        #test {
+            width: 300px;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-image:url("https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+            background-size: cover;
+            overflow-y: auto;
+        }
+    </style>
+
+
+    <script>
+        window.onload = () => {
+        
+            const show = document.getElementById("test");
+        const content = document.getElementById("courseMobile").content.cloneNode(true);
+        show.append(content);
+        }
+        
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
